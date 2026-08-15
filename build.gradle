@@ -1,0 +1,30 @@
+// Root project — just propagate group/version to all subprojects.
+allprojects {
+    group = 'ru.skybuilder1717'
+    version = '0.3'
+}
+
+repositories {
+    maven { url = 'https://maven.quiltmc.org/repository/release/' }
+    maven {
+        name = 'Fabric'
+        url = 'https://maven.fabricmc.net/'
+    }
+    maven { url = 'https://maven.neoforged.net/releases' }
+    mavenCentral()
+    gradlePluginPortal()
+}
+
+subprojects {
+    apply plugin: 'java-library'
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_25
+        targetCompatibility = JavaVersion.VERSION_25
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        it.options.encoding = 'UTF-8'
+        it.options.release.set(25)
+    }
+}

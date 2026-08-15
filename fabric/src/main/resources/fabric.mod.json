@@ -1,0 +1,27 @@
+{
+	"schemaVersion": 1,
+	"id": "stickers",
+	"version": "${version}",
+	"name": "Stickers",
+	"description": "Stickers for your HUD.",
+	"authors": [
+		"SkyBuilder1717"
+	],
+	"icon": "assets/stickers/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"ru.skybuilder1717.stickers.Stickers"
+		],
+		"client": [
+			"ru.skybuilder1717.stickers.client.StickersClient"
+		]
+	},
+	"mixins": [],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

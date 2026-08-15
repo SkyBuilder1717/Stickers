@@ -1,0 +1,34 @@
+pluginManagement {
+    def props = new Properties()
+    file('gradle.properties').withInputStream { props.load(it) }
+
+    repositories {
+        maven { url = 'https://maven.quiltmc.org/repository/release/' }
+        maven {
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
+        }
+        maven { url = 'https://maven.neoforged.net/releases' }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+
+    plugins {
+        id 'net.fabricmc.fabric-loom' version "${props.loom_version}"
+
+        id 'net.neoforged.gradle.common' version "${props.neogradle_version}"
+        id 'net.neoforged.gradle.userdev' version "${props.neogradle_version}"
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven { name = 'Quilt';    url = 'https://maven.quiltmc.org/repository/release/' }
+        maven { name = 'Fabric';   url = 'https://maven.fabricmc.net/' }
+        maven { name = 'NeoForge'; url = 'https://maven.neoforged.net/releases' }
+    }
+}
+
+rootProject.name = 'stickers'
+include 'common', 'fabric', 'neoforge'

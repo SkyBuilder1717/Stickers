@@ -1,0 +1,69 @@
+plugins {
+    id 'net.neoforged.gradle.common'
+    id 'net.neoforged.gradle.userdev'
+    id 'com.gradleup.shadow' version '8.3.0'
+    id 'maven-publish'
+}
+
+version = project.mod_version
+group   = project.maven_group
+
+base {
+    archivesName = "${project.archives_base_name}-neoforge"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+minecraft {
+    runs {
+        client {
+            systemProperty 'forge.enabledGameTestNamespaces', 'stickers'
+        }
+    }
+}
+
+configurations {
+    common
+    shadowCommon
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentNeoForge.extendsFrom common
+}
+
+dependencies {
+    implementation "net.neoforged:neoforge:${neo_version}"
+    implementation 'com.google.code.gson:gson:2.14.0'
+
+    common(project(path: ':common')) { transitive = false }
+    shadowCommon(project(path: ':common')) { transitive = false }
+}
+
+tasks.named('shadowJar', com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar) {
+    archiveClassifier.set('')
+    configurations = [project.configurations.shadowCommon]
+}
+
+tasks.build {
+    dependsOn tasks.shadowJar
+}
+
+processResources {
+    inputs.property 'version',                 project.version
+    inputs.property 'mod_id',                  project.archives_base_name
+    inputs.property 'minecraft_version',       project.minecraft_version
+    inputs.property 'minecraft_version_range', project.minecraft_version_range
+    inputs.property 'neo_version',             project.neo_version
+
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand version:                 project.version,
+                mod_id:                  project.archives_base_name,
+                minecraft_version:       project.minecraft_version,
+                minecraft_version_range: project.minecraft_version_range,       // <-- And this
+                neo_version:             project.neo_version
+    }
+    filteringCharset 'UTF-8'
+}

@@ -1,0 +1,9 @@
+// Common module — pure Java, no MC dependency.
+// StickerData and StickerManager live here; screens live in each platform module.
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.14.0'
+}
