@@ -1,7 +1,7 @@
 # Stickers
 
-<a href="https://modrinth.com/mod/hudstickers"><img src="https://img.shields.io/modrinth/dt/VlDu7joP?style=for-the-badge&logo=modrinth" /></a>
-<a href="https://www.curseforge.com/minecraft/mc-mods/hud-stickers"><img src="https://img.shields.io/curseforge/dt/1571289?style=for-the-badge&logo=curseforge" /></a>
+[![Modrinth Downloads](https://img.shields.io/modrinth/dt/VlDu7joP?style=for-the-badge&logo=modrinth)](https://modrinth.com/mod/hudstickers)
+[![Curseforge Downloads](https://img.shields.io/curseforge/dt/1571289?style=for-the-badge&logo=curseforge)](https://www.curseforge.com/minecraft/mc-mods/hud-stickers)
 
 Mod adds new mechanic to your HUD - Sticky notes.
 
