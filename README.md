@@ -10,5 +10,3 @@ You can add, edit, delete them, and toggle their visibility.
 
 There is also a Drag Mode. Use **G** key to open it.
 You can drag the sticky notes in real time!
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/nIdWW93sYFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
