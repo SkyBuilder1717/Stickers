@@ -1,4 +1,4 @@
-name: Gradle CI
+name: Fabric
 
 on:
   push:
@@ -26,10 +26,10 @@ jobs:
         if: runner.os != 'Windows'
         run: chmod +x gradlew
 
-      - name: Build (Unix)
+      - name: Build fabric subproject (Unix)
         if: runner.os != 'Windows'
-        run: ./gradlew build --no-daemon
+        run: ./gradlew :fabric:build --no-daemon
 
-      - name: Build (Windows)
+      - name: Build fabric subproject (Windows)
         if: runner.os == 'Windows'
-        run: .\\gradlew.bat build --no-daemon
+        run: .\\gradlew.bat :fabric:build --no-daemon
