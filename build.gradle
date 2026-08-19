@@ -1,7 +1,6 @@
-// Root project — just propagate group/version to all subprojects.
 allprojects {
     group = 'ru.skybuilder1717'
-    version = '0.3'
+    version = project.mod_version
 }
 
 repositories {
