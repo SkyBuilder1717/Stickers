@@ -32,14 +32,14 @@ public class StickersClient implements ClientModInitializer {
 
         OPEN_KEY = KeyMappingHelper.registerKeyMapping(new KeyMapping(
                 "key.stickers.open",
-                InputConstants.Type.KEYSYM,
+                InputConstants.Type.KEYBOARD,
                 GLFW.GLFW_KEY_K,
                 category
         ));
 
         DRAG_KEY = KeyMappingHelper.registerKeyMapping(new KeyMapping(
                 "key.stickers.drag",
-                InputConstants.Type.KEYSYM,
+                InputConstants.Type.KEYBOARD,
                 GLFW.GLFW_KEY_G,
                 category
         ));

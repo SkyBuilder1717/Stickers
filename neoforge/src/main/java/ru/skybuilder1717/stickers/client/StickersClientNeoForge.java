@@ -42,13 +42,13 @@ public class StickersClientNeoForge {
         event.registerCategory(cat);
         OPEN_KEY = new KeyMapping(
                 "key.stickers.open",
-                InputConstants.Type.KEYSYM,
+                InputConstants.Type.KEYBOARD,
                 GLFW.GLFW_KEY_K,
                 cat
         );
         DRAG_KEY = new KeyMapping(
                 "key.stickers.drag",
-                InputConstants.Type.KEYSYM,
+                InputConstants.Type.KEYBOARD,
                 GLFW.GLFW_KEY_G,
                 cat
         );
